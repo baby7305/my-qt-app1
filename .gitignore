@@ -11,3 +11,19 @@ CTestTestfile.cmake
 \.idea/
 
 cmake-build-debug/
+
+\.vs/
+
+x64/
+
+release/
+
+debug/
+
+my-qt-app1\.vcxproj
+
+my-qt-app1\.vcxproj\.filters
+
+\.qmake\.stash
+
+my-qt-app1\.sln
