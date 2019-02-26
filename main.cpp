@@ -17,8 +17,10 @@ int main(int argc, char *argv[]) {
     pushButton.setParent(&widget);
 
     QHBoxLayout layout;
+    layout.addStretch(1);
     layout.addWidget(&pushButton);
     layout.addWidget(&lineEdit);
+    layout.addStretch(1);
 
     widget.setLayout(&layout);
     widget.show();
