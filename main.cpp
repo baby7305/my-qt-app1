@@ -15,6 +15,11 @@ int main(int argc, char *argv[]) {
     pushButton.setText("button");
 
     QGridLayout layout;
+    layout.setColumnStretch(3, 1);
+    layout.setRowStretch(3, 1);
+    layout.setColumnStretch(0, 1);
+    layout.setRowStretch(0, 1);
+
     layout.addWidget(&pushButton, 1, 1);
     layout.addWidget(&lineEdit, 1, 2);
     layout.addWidget(new QPushButton("确定"), 2, 1);
