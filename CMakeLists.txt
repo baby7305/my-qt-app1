@@ -16,7 +16,7 @@ set(UI_FILES)
 set(RC_FILES)
 set(QRC_FILES)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp MyWidget.cpp)
 
 add_executable(my_qt_app1 WIN32 ${RC_FILES}${SOURCE_FILES}${UI_FILES}${QRC_FILES})
 
