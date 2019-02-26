@@ -9,11 +9,9 @@ int main(int argc, char *argv[]) {
 
     QLineEdit lineEdit;
     lineEdit.setPlaceholderText("要输入密码");
-    lineEdit.setParent(&widget);
 
     QPushButton pushButton;
     pushButton.setText("button");
-    pushButton.setParent(&widget);
 
     widget.show();
     return app.exec();
