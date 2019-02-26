@@ -2,6 +2,7 @@
 #include <QWidget>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QHBoxLayout>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
@@ -15,6 +16,11 @@ int main(int argc, char *argv[]) {
     pushButton.setText("button");
     pushButton.setParent(&widget);
 
+    QHBoxLayout layout;
+    layout.addWidget(&pushButton);
+    layout.addWidget(&lineEdit);
+
+    widget.setLayout(&layout);
     widget.show();
     return app.exec();
 }
