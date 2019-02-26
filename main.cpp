@@ -7,8 +7,8 @@ int main(int argc, char *argv[]) {
     QWidget widget;
 
     QLineEdit lineEdit;
-    lineEdit.show();
     lineEdit.setParent(&widget);
+    lineEdit.setGeometry(30, 30, 100, 30);
 
     widget.show();
     return app.exec();
