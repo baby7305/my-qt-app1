@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
     QGridLayout layout;
     layout.setColumnStretch(3, 1);
-    layout.setRowStretch(3, 1);
+    layout.setRowStretch(4, 1);
     layout.setColumnStretch(0, 1);
     layout.setRowStretch(0, 1);
 
@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
     layout.addWidget(&lineEdit, 1, 2);
     layout.addWidget(new QPushButton("确定"), 2, 1);
     layout.addWidget(new QPushButton("取消"), 2, 2);
+    layout.addWidget(new QPushButton("我占了两格"), 3, 1, 1, 2);
 
     widget.setLayout(&layout);
     widget.show();
