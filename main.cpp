@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
     QHBoxLayout layout;
     layout.addStretch(1);
     layout.addWidget(&pushButton);
+    layout.addSpacing(50);
     layout.addWidget(&lineEdit);
     layout.addStretch(1);
 
