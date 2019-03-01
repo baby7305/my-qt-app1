@@ -32,7 +32,7 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent) {
     combo->addItem("Select item1");
     combo->addItem("Select item2");
     combo->setEditable(true);
-    combo->setCompleter(new QCompleter(QStringList() << "aaa" << "bbb"));
+    combo->setCompleter(new QCompleter(combo->model()));
 
     lay->addWidget(edit = new QTextEdit);
     edit->setText("<table border=1><tr><th>head1</th><th>head2</th></tr>"
