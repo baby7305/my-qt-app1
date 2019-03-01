@@ -12,6 +12,7 @@ public:
 signals:
 
 public slots:
+    void slotComboBoxIndexChanged(const QString&);
 };
 
 #endif // MYWIDGET_H

@@ -11,11 +11,14 @@
 #include <QtWidgets/QDateTimeEdit>
 #include <QtWidgets/QTextBrowser>
 #include <QCompleter>
+#include <QDebug>
 #include "MyWidget.h"
 
 MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
+    QLabel *label;
+    QRadioButton *radio;
     QComboBox *combo;
     QPushButton *pushButton;
     QTextEdit *edit;
@@ -23,10 +26,19 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     QSlider *slider;
     QSpinBox *spinBox;
 
-    lay->addWidget(new QLabel("<font color=red>label</font>"));
+    lay->addWidget(label = new QLabel("<a href=www.baidu.com>baidu</a>"));
+    connect(label, &QLabel::linkActivated, [](QString str) {
+        qDebug() << str;
+    });
+
     lay->addWidget(pushButton = new QPushButton("Button"));
     pushButton->setStyleSheet("QPushButton {font:bold 16px; color:red; padding:5px}");
-    lay->addWidget(new QRadioButton("Radio"));
+
+    lay->addWidget(radio = new QRadioButton("Radio"));
+    connect(radio, &QRadioButton::clicked, [](bool v) {
+        qDebug() << v;
+    });
+
     lay->addWidget(new QCheckBox("check box"));
 
     lay->addWidget(combo = new QComboBox());
@@ -35,6 +47,7 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     combo->setEditable(true);
     combo->setCompleter(new QCompleter(QStringList() << "aaa"
                                                      << "bbb"));
+    connect(combo, SIGNAL(currentIndexChanged(QString)), this, SLOT(slotComboBoxIndexChanged(QString)));
 
     lay->addWidget(edit = new QTextEdit);
     edit->setText("<table border=1><tr><th>head1</th><th>head2</th></tr>"
@@ -61,4 +74,9 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     lay->addWidget(new QDateTimeEdit);
     lay->addWidget(new QDateEdit);
     lay->addWidget(new QTimeEdit);
+}
+
+void MyWidget::slotComboBoxIndexChanged(const QString &str)
+{
+    qDebug() << "slotComboBoxIndexChanged" << str;
 }
