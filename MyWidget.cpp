@@ -12,18 +12,25 @@
 #include <QtWidgets/QTextBrowser>
 #include "MyWidget.h"
 
-MyWidget::MyWidget(QWidget *parent) : QWidget(parent) {
+MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
+{
     QVBoxLayout *lay = new QVBoxLayout(this);
+    QLabel *label;
     QComboBox *combo;
+    QTextEdit *edit;
 
-    lay->addWidget(new QLabel("label"));
+    lay->addWidget(label = new QLabel("label"));
+    label->setPixmap(QPixmap("./aaa.png"));
     lay->addWidget(new QPushButton("Button"));
     lay->addWidget(new QRadioButton("Radio"));
     lay->addWidget(new QCheckBox("check box"));
     lay->addWidget(combo = new QComboBox());
     combo->addItem("Select item1");
     combo->addItem("Select item2");
-    lay->addWidget(new QTextEdit);
+
+    lay->addWidget(edit = new QTextEdit);
+    edit->setText("<img src=./aaa.png></img>");
+
     lay->addWidget(new QTextBrowser);
     lay->addWidget(new QGroupBox("Some items"));
     lay->addWidget(new QSlider);
@@ -32,5 +39,4 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent) {
     lay->addWidget(new QDateTimeEdit);
     lay->addWidget(new QDateEdit);
     lay->addWidget(new QTimeEdit);
-
 }
