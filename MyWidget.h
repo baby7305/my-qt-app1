@@ -6,13 +6,13 @@
 class MyWidget : public QWidget
 {
     Q_OBJECT
-public:
+  public:
     explicit MyWidget(QWidget *parent = nullptr);
 
-signals:
+  signals:
 
-public slots:
-    void slotComboBoxIndexChanged(const QString&);
+  public slots:
+    void slotComboBoxIndexChanged(const QString &);
 };
 
 #endif // MYWIDGET_H
