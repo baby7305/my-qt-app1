@@ -13,7 +13,8 @@
 #include <QCompleter>
 #include "MyWidget.h"
 
-MyWidget::MyWidget(QWidget *parent) : QWidget(parent) {
+MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
+{
     QVBoxLayout *lay = new QVBoxLayout(this);
     QComboBox *combo;
     QPushButton *pushButton;
@@ -32,7 +33,8 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent) {
     combo->addItem("Select item1");
     combo->addItem("Select item2");
     combo->setEditable(true);
-    combo->setCompleter(new QCompleter(QStringList() << "aaa" << "bbb"));
+    combo->setCompleter(new QCompleter(QStringList() << "aaa"
+                                                     << "bbb"));
 
     lay->addWidget(edit = new QTextEdit);
     edit->setText("<table border=1><tr><th>head1</th><th>head2</th></tr>"
@@ -59,5 +61,4 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent) {
     lay->addWidget(new QDateTimeEdit);
     lay->addWidget(new QDateEdit);
     lay->addWidget(new QTimeEdit);
-
 }
