@@ -58,6 +58,8 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     connect(edit, &QTextEdit::textChanged, [&]() {
         qDebug() << _edit->toPlainText();
     });
+    edit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
     lay->addWidget(new QTextBrowser);
 
