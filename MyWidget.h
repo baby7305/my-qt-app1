@@ -2,6 +2,7 @@
 #define MYWIDGET_H
 
 #include <QWidget>
+#include <QtWidgets/QPushButton>
 
 class MyWidget : public QWidget
 {
@@ -13,10 +14,12 @@ public:
     void mouseMoveEvent(QMouseEvent *);
     void keyPressEvent(QKeyEvent *);
     void keyReleaseEvent(QKeyEvent *);
+    QPushButton* button;
 
 signals:
 
 public slots:
+    void slotButtonClicked();
 };
 
 #endif // MYWIDGET_H

@@ -4,7 +4,15 @@
 
 MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
 {
+    button = new QPushButton("ok", this);
+    button->setDefault(true);
     this->setMouseTracking(true);
+    connect(button, SIGNAL(clicked()), this, SLOT(slotButtonClicked()));
+}
+
+void MyWidget::slotButtonClicked()
+{
+    qDebug() << "slotButtonClicked";
 }
 
 void MyWidget::mousePressEvent(QMouseEvent *ev)
