@@ -9,6 +9,10 @@ class MyWidget : public QWidget
 public:
     explicit MyWidget(QWidget *parent = nullptr);
     void mousePressEvent(QMouseEvent *);
+    void mouseReleaseEvent(QMouseEvent *);
+    void mouseMoveEvent(QMouseEvent *);
+    void keyPressEvent(QKeyEvent *);
+    void keyReleaseEvent(QKeyEvent *);
 
 signals:
 
