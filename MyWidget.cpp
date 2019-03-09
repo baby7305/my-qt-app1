@@ -75,6 +75,9 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     spinBox->setMaximum(10);
     spinBox->setMinimum(0);
 
+    connect(slider, SIGNAL(valueChanged(int)), spinBox, SLOT(setValue(int)));
+    connect(spinBox, SIGNAL(valueChanged(int)), slider, SLOT(setValue(int)));
+
     lay->addWidget(new QDateTimeEdit);
     lay->addWidget(new QDateEdit);
     lay->addWidget(new QTimeEdit);
