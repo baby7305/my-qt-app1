@@ -54,6 +54,10 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
                   "<tr><td>value1</td><td>value2</td></tr>"
                   "<tr><td>value3</td><td>value4</td></tr>"
                   "</table><br>");
+    _edit = edit;
+    connect(edit, &QTextEdit::textChanged, [&]() {
+        qDebug() << _edit->toPlainText();
+    });
 
     lay->addWidget(new QTextBrowser);
 
