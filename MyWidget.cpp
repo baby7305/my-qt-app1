@@ -4,7 +4,7 @@
 
 MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
 {
-
+    this->setMouseTracking(true);
 }
 
 void MyWidget::mousePressEvent(QMouseEvent *ev)
