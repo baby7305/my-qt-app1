@@ -9,6 +9,8 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 set(CMAKE_PREFIX_PATH F:/Qt/Qt5.12.1/5.12.1/mingw73_64) #这里需要填入自己安装的路径
+list(APPEND CMAKE_PREFIX_PATH "E:/Qt/Qt5.12.1/5.12.1/mingw73_64")
+list(APPEND CMAKE_PREFIX_PATH "F:/Qt/Qt5.12.1/5.12.1/mingw73_64")
 
 find_package(Qt5Widgets)
 
