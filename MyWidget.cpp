@@ -83,6 +83,12 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     lay->addWidget(new QDateTimeEdit);
     lay->addWidget(new QDateEdit);
     lay->addWidget(new QTimeEdit);
+
+    QLCDNumber *lcd;
+    lay->addWidget(lcd = new QLCDNumber(10));
+    lcd->display(12345);
+    lcd->setMode(QLCDNumber::Hex);
+    lcd->setSegmentStyle(QLCDNumber::Outline);
 }
 
 void MyWidget::slotComboBoxIndexChanged(const QString &str)
