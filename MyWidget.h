@@ -10,6 +10,7 @@ class MyWidget : public QWidget
 public:
     explicit MyWidget(QWidget *parent = nullptr);
     QPushButton* button;
+    bool eventFilter(QObject *, QEvent *);
 
 signals:
 
