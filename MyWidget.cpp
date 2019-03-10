@@ -13,4 +13,5 @@ void MyWidget::paintEvent(QPaintEvent *)
     p.drawText(QPoint(300, 50), "Hello world");
     p.drawRect(QRect(40, 60, 100, 50));
     p.drawRoundRect(QRect(80, 80, 150, 150));
+    p.drawPixmap(QPoint(40, 40), QPixmap("../aaa.png"));
 }
