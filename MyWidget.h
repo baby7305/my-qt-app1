@@ -15,6 +15,7 @@ public:
     void keyPressEvent(QKeyEvent *);
     void keyReleaseEvent(QKeyEvent *);
     QPushButton* button;
+    QPushButton* button2;
 
 signals:
 

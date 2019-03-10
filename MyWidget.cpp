@@ -1,18 +1,23 @@
 #include "MyWidget.h"
 #include <QDebug>
 #include <QMouseEvent>
+#include <QtWidgets/QVBoxLayout>
 
 MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
 {
-    button = new QPushButton("ok", this);
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    lay->addWidget(button = new QPushButton("OK", this));
+    lay->addWidget(button2 = new QPushButton("Button2"));
     button->setDefault(true);
     this->setMouseTracking(true);
     connect(button, SIGNAL(clicked()), this, SLOT(slotButtonClicked()));
+    connect(button2, SIGNAL(clicked()), this, SLOT(slotButtonClicked()));
 }
 
 void MyWidget::slotButtonClicked()
 {
-    qDebug() << "slotButtonClicked";
+    QPushButton *button = (QPushButton *)sender();
+    qDebug() << button->text();
 }
 
 void MyWidget::mousePressEvent(QMouseEvent *ev)
