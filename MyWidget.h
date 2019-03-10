@@ -11,6 +11,7 @@ public:
     explicit MyWidget(QWidget *parent = nullptr);
     QPushButton* button;
     bool eventFilter(QObject *, QEvent *);
+    bool event(QEvent *);
 
 signals:
 

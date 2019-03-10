@@ -1,5 +1,6 @@
 #include "MyWidget.h"
 #include <QEvent>
+#include <QDebug>
 
 MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
 {
@@ -18,4 +19,13 @@ bool MyWidget::eventFilter(QObject *o, QEvent *e)
         return true;
     }
     return QWidget::eventFilter(o, e);
+}
+
+bool MyWidget::event(QEvent *e)
+{
+    if (e->type() == QEvent::User)
+    {
+        qDebug() << "User event is comming";
+    }
+    return QWidget::event(e);
 }
